@@ -275,11 +275,10 @@ namespace OpenRA.Mods.RA.AI
 
 				activeUnits.Add(a);
 			}
-			
+
 			/* Create an attack force when we have enough units around our base. */
 			// (don't bother leaving any behind for defense.)
-			int randomizedSquadSize = random.Next(Info.SquadSize/3, Info.SquadSize*3);
-			if (unitsHangingAroundTheBase.Count >= randomizedSquadSize)
+			if (unitsHangingAroundTheBase.Count >= Info.SquadSize)
 			{
 				BotDebug("Launch an attack.");
 
@@ -315,7 +314,7 @@ namespace OpenRA.Mods.RA.AI
 						// Check how many own units we have gathered nearby...
 						var ownUnits = world.FindUnitsInCircle(a1.CenterLocation, Game.CellSize * 2)
 							.Where(unit => unit.Owner == p).ToList();
-						if (ownUnits.Count < randomizedSquadSize - 3)
+						if (ownUnits.Count < Info.SquadSize)
 						{
 							// Not enough to attack. Send more units.
 							world.IssueOrder(new Order("Stop", a1, false));
