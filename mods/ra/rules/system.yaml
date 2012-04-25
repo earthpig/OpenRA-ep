@@ -39,8 +39,8 @@ Player:
 		InitialCash: 5000
 	ActorGroupProxy:
 	DeveloperMode:
-	HackyAI@tcampAI:
-		Name:tcampAI
+	HackyAI@EasyAI:
+		Name:Easy AI
 		BuildingFractions:
 			proc: 30%
 			powr: 35%
@@ -58,21 +58,17 @@ Player:
 			fix: 0.1%
 			dome: 10%
 		UnitsToBuild:
-			e1: 70% 
-			e2: 10% 
-			e3: 20% 
-			e4: 5% 
-			e6: 5% 
-			medi: 1% 
-			shok: 5% 
+			e1: 50%
+			e3: 10%
 			apc: 30%
 			jeep: 40%
+			arty: 15%
+			v2rl: 40%
 			ftrk: 50%
-			1tnk: 20%
+			1tnk: 70%
 			2tnk: 25%
 			3tnk: 50%
-			arty: 10%
-		SquadSize: 7
+		SquadSize: 20
 	HackyAI@NormalAI:
 		Name:Normal AI
 		BuildingFractions:
@@ -139,7 +135,7 @@ Player:
 		Name:epAI 120421
 		BuildingFractions:
 			proc: 25%
-			powr: 30%
+			powr: 35%
 			tent: 1%
 			barr: 1%
 			weap: 5%
