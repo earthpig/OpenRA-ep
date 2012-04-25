@@ -278,6 +278,15 @@ namespace OpenRA.Mods.RA.AI
 
 			/* Create an attack force when we have enough units around our base. */
 			// (don't bother leaving any behind for defense.)
+			/*
+			int RandomizedSquadSize = 0;
+			
+			while (RandomizedSquadSize < 6)
+			{
+				RandomizedSquadSize = random.Next(3 * Info.SquadSize);
+			}
+			*/
+			
 			if (unitsHangingAroundTheBase.Count >= Info.SquadSize)
 			{
 				BotDebug("Launch an attack.");
@@ -302,7 +311,7 @@ namespace OpenRA.Mods.RA.AI
 				bool foundEnemy = false;
 				foreach (var a1 in attackForce)
 				{
-					var enemyUnits = world.FindUnitsInCircle(a1.CenterLocation, Game.CellSize * 10)
+					var enemyUnits = world.FindUnitsInCircle(a1.CenterLocation, Game.CellSize * 15)
 						.Where(unit => p.Stances[unit.Owner] == Stance.Enemy).ToList();
 
 					if (enemyUnits.Count > 0)

@@ -231,7 +231,12 @@ namespace OpenRA.Mods.RA.Air
 
 			if (order.OrderID == "Move")
 				return new Order(order.OrderID, self, queued) { TargetLocation = Util.CellContaining(target.CenterLocation) };
-
+			//newUnit.QueueActivity(new AttackMove.AttackMoveActivity(mobile.MoveTo(rp.rallyPoint, 1)));
+			
+			//if (order.OrderID == "AttackMove")
+				//return new Order(order.OrderID, self, queued) { TargetLocation = Util.CellContaining(target.CenterLocation) };
+				//return new Order(order.OrderID, self, queued) { TargetLocation = Util.CellContaining(target.CenterLocation) };
+			
 			return null;
 		}
 
