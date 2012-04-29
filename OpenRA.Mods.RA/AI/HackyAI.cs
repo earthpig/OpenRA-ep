@@ -278,7 +278,9 @@ namespace OpenRA.Mods.RA.AI
 			
 			/* Create an attack force when we have enough units around our base. */
 			// (don't bother leaving any behind for defense.)
-			int randomizedSquadSize = random.Next(Info.SquadSize/3, Info.SquadSize*3);
+			
+			int randomizedSquadSize = Info.SquadSize - 4 + random.Next(200);
+						
 			if (unitsHangingAroundTheBase.Count >= randomizedSquadSize)
 			{
 				BotDebug("Launch an attack.");

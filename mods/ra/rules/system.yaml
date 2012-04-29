@@ -129,12 +129,9 @@ Player:
 			3tnk: 50%
 		SquadSize: 10
 	HackyAI@epAI:
-		#If you make any changes to this, please rename your
-		# custom bot to something else to avoid confusion
-		# in viewing replays, sharing information, etc.
-		Name:epAI 120421
+		Name:epAI 120428
 		BuildingFractions:
-			proc: 25%
+			proc: 30%
 			powr: 35%
 			tent: 1%
 			barr: 1%
@@ -142,7 +139,7 @@ Player:
 			pbox: 7%
 			gun: 10%
 			ftur: 5%
-			tsla: 15%
+			tsla: 14%
 			fix: 1%
 			dome: 3%
 			agun: 10%
@@ -153,7 +150,6 @@ Player:
 			stek: 1%
 		UnitsToBuild:
 			e1: 14%
-			e2: 7%
 			e3: 10%
 			harv: 20%
 			apc: 5%
@@ -164,7 +160,7 @@ Player:
 			3tnk: 60%
 			v2rl: 25%
 			arty: 25%
-		SquadSize: 10
+		SquadSize: 7
 
 	PlayerColorPalette:
 		BasePalette: terrain

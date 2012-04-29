@@ -18,6 +18,7 @@ namespace OpenRA.Widgets
 	{
 		public Func<bool> IsDisabled = () => false;
 		public event Action<float> OnChange = _ => {};
+		public event Action<int> OnChangeInt = _ => {};
 		public int Ticks = 0;
 		public int TrackHeight = 5;
 
@@ -33,6 +34,7 @@ namespace OpenRA.Widgets
 			: base(other)
 		{
 			OnChange = other.OnChange;
+			OnChangeInt = other.OnChangeInt;
 			Ticks = other.Ticks;
 			MinimumValue = other.MinimumValue;
 			MaximumValue = other.MaximumValue;
@@ -44,6 +46,12 @@ namespace OpenRA.Widgets
 		{
 			Value = newValue.Clamp(MinimumValue, MaximumValue);
 			OnChange(Value);
+		}
+		
+		void UpdateValue(int newValue)
+		{
+			Value = (int)newValue.Clamp(MinimumValue, MaximumValue);
+			OnChangeInt((int)Value);
 		}
 
 		public override bool HandleMouseInput(MouseInput mi)
@@ -78,7 +86,10 @@ namespace OpenRA.Widgets
 
 		float ValueFromPx(int x) { return MinimumValue + (MaximumValue - MinimumValue) * (1f * x / RenderBounds.Width); }
 		int PxFromValue(float x) { return (int)(RenderBounds.Width * (x - MinimumValue) / (MaximumValue - MinimumValue)); }
-
+		
+		int ValueFromPxInt(int y) { return (int)(MinimumValue + (MaximumValue - MinimumValue) * (1f * y / RenderBounds.Width)); }
+		int PxFromValueInt(int y) { return (int)(RenderBounds.Width * (y - MinimumValue) / (MaximumValue - MinimumValue)); }
+		
 		public override Widget Clone() { return new SliderWidget(this); }
 
 		Rectangle ThumbRect

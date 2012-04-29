@@ -105,24 +105,38 @@ Background@SETTINGS_MENU:
 					Ticks:5
 					MinimumValue: 10
 					MaximumValue: 50
+				Label@GAME_SPEED_AMOUNT_LABEL:
+					Id:EDGE_SCROLL_AMOUNT_LABEL
+					X:0
+					Y:100
+					Text: Game Speed
+				Slider@GAME_SPEED_AMOUNT:
+					Id:GAME_SPEED_AMOUNT
+					X:130
+					Y:90
+					Width:250
+					Height:20
+					Ticks:5
+					MinimumValue: 1
+					MaximumValue: 80
 				Checkbox@INVERSE_SCROLL:
 					Id:INVERSE_SCROLL
 					X:0
-					Y:90
+					Y:120
 					Width:200
 					Height:20
 					Text: Invert Mouse Drag Scrolling
 				Checkbox@TEAMCHAT_TOGGLE:
 					Id:TEAMCHAT_TOGGLE
 					X:0
-					Y:120
+					Y:145
 					Width:200
 					Height:20
 					Text: Shift-Enter Toggles Team Chat
 				Checkbox@SHOW_SHELLMAP:
 					Id:SHOW_SHELLMAP
 					X:0
-					Y:150
+					Y:170
 					Width:200
 					Height:20
 					Text: Show Shellmap

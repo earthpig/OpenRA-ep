@@ -56,7 +56,11 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 			var edgeScrollSlider = general.GetWidget<SliderWidget>("EDGE_SCROLL_AMOUNT");
 			edgeScrollSlider.Value = Game.Settings.Game.ViewportEdgeScrollStep;
 			edgeScrollSlider.OnChange += x => Game.Settings.Game.ViewportEdgeScrollStep = x;
-
+			
+			var timeStepSlider = general.GetWidget<SliderWidget>("GAME_SPEED_AMOUNT");
+			timeStepSlider.Value = Game.Settings.Game.Timestep;
+			timeStepSlider.OnChangeInt += y => Game.Settings.Game.Timestep = y;
+			
 			var inversescroll = general.GetWidget<CheckboxWidget>("INVERSE_SCROLL");
 			inversescroll.IsChecked = () => Game.Settings.Game.MouseScroll == MouseScrollType.Inverted;
 			inversescroll.OnClick = () => Game.Settings.Game.MouseScroll = (Game.Settings.Game.MouseScroll == MouseScrollType.Inverted) ? MouseScrollType.Standard : MouseScrollType.Inverted;
