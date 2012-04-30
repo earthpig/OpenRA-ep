@@ -317,7 +317,7 @@ namespace OpenRA.Mods.RA.AI
 						// Check how many own units we have gathered nearby...
 						var ownUnits = world.FindUnitsInCircle(a1.CenterLocation, Game.CellSize * 2)
 							.Where(unit => unit.Owner == p).ToList();
-						if (ownUnits.Count < randomizedSquadSize - 3)
+						if (ownUnits.Count < randomizedSquadSize)
 						{
 							// Not enough to attack. Send more units.
 							world.IssueOrder(new Order("Stop", a1, false));

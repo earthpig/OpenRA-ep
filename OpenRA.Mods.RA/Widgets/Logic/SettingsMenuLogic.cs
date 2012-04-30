@@ -118,7 +118,7 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 			var checkunsyncedCheckbox = debug.GetWidget<CheckboxWidget>("CHECKUNSYNCED_CHECKBOX");
 			checkunsyncedCheckbox.IsChecked = () => Game.Settings.Debug.SanityCheckUnsyncedCode;
 			checkunsyncedCheckbox.OnClick = () => Game.Settings.Debug.SanityCheckUnsyncedCode ^= true;
-
+			
 			bg.GetWidget<ButtonWidget>("BUTTON_CLOSE").OnClick = () =>
 			{
 				int x, y;
